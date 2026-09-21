@@ -16,6 +16,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain configuracionCadenasFiltrosSeguridad(HttpSecurity http) throws Exception {
         http
+                // CORS -> Habilitar
+                .cors(Customizer.withDefaults())
                 // CSRF (Cross-Site Request Forgery) -> Desactivar
                 .csrf(AbstractHttpConfigurer::disable)
                 // Session Management (Gestión de Sesiones) -> Sin estado ( Stateless)
@@ -26,5 +28,17 @@ public class SecurityConfig {
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
 
         return http.build();
+    }
+
+    @Bean
+    public org.springframework.web.cors.CorsConfigurationSource corsConfigurationSource() {
+        org.springframework.web.cors.CorsConfiguration configuration = new org.springframework.web.cors.CorsConfiguration();
+        configuration.setAllowedOrigins(java.util.List.of("http://localhost:5173"));// url front, react
+        configuration.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));// metodos
+        configuration.setAllowedHeaders(java.util.List.of("*"));// headers
+
+        org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new org.springframework.web.cors.UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 }
