@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/bff/catalog")
+@RequestMapping({"/api/bff/catalog", "/api/catalog"})
 @RequiredArgsConstructor
 public class BffCatalogoController {
 
@@ -32,13 +32,29 @@ public class BffCatalogoController {
         return catalogoClient.crearServicio(dto);
     }
 
-    @GetMapping("/spares")
+    @GetMapping({"/spares", "/parts"})
     public List<RepuestoDTO> listarRepuestos() {
         return catalogoClient.listarRepuestos();
     }
 
-    @PutMapping("/spares/{id}/stock")
+    @PostMapping({"/spares", "/parts"})
+    public RepuestoDTO crearRepuesto(@RequestBody RepuestoDTO dto) {
+        return catalogoClient.crearRepuesto(dto);
+    }
+
+    @PutMapping({"/spares/{id}/stock", "/parts/{id}/stock"})
     public RepuestoDTO actualizarStock(@PathVariable("id") Long id, @RequestBody ActualizarStockDTO dto) {
-        return catalogoClient.actualizarStock(id, dto);
+        RepuestoDTO existing = catalogoClient.obtenerRepuesto(id);
+        if (existing == null) throw new RuntimeException("Repuesto no encontrado");
+        RepuestoDTO updated = new RepuestoDTO(
+            existing.id(),
+            existing.codigo(),
+            existing.nombre(),
+            existing.descripcion(),
+            dto.cantidad(),
+            existing.precio(),
+            existing.activo()
+        );
+        return catalogoClient.actualizarStock(id, updated);
     }
 }

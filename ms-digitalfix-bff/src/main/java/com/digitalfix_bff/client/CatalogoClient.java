@@ -22,9 +22,15 @@ public interface CatalogoClient {
     @PostMapping("/services")
     ServicioDTO crearServicio(@RequestBody ServicioDTO dto);
 
-    @GetMapping("/spares")
+    @GetMapping("/parts")
     List<RepuestoDTO> listarRepuestos();
 
-    @PutMapping("/spares/{id}/stock")
-    RepuestoDTO actualizarStock(@PathVariable("id") Long id, @RequestBody ActualizarStockDTO dto);
+    @PostMapping("/parts")
+    RepuestoDTO crearRepuesto(@RequestBody RepuestoDTO dto);
+
+    @GetMapping("/parts/{id}")
+    RepuestoDTO obtenerRepuesto(@PathVariable("id") Long id);
+
+    @PutMapping("/parts/{id}")
+    RepuestoDTO actualizarStock(@PathVariable("id") Long id, @RequestBody RepuestoDTO dto);
 }

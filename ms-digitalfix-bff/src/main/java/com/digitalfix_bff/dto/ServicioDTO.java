@@ -1,9 +1,10 @@
 package com.digitalfix_bff.dto;
+import java.math.BigDecimal;
 
 public record ServicioDTO(
-        Long id,
+        Integer id,
         String nombre,
         String descripcion,
-        Double tarifa
-) {
-}
+        BigDecimal tarifa,
+        Boolean activo
+) {}

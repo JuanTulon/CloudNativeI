@@ -1,15 +1,14 @@
 package com.digitalfix_bff.dto;
-
 import java.time.LocalDateTime;
 
 public record OrdenTrabajoDTO(
-        Long id,
-        String titulo,
-        String descripcion,
+        Integer idOrdenTrabajo,
+        String clienteId,
+        Integer servicioId,
+        Integer repuestoId,
         EstadoOrden estado,
-        Long tecnicoId,
-        Long clienteId,
+        String direccion,
+        String tecnicoAsignadoId,
         LocalDateTime fechaCreacion,
         LocalDateTime fechaActualizacion
-) {
-}
+) {}

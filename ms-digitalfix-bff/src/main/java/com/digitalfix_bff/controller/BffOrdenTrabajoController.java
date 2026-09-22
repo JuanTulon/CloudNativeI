@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 // Path base para el BFF de ordenes de trabajo
-@RequestMapping("/api/bff/workorders")
+@RequestMapping({"/api/bff/workorders", "/api/workorders"})
 @RequiredArgsConstructor
 public class BffOrdenTrabajoController {
 
