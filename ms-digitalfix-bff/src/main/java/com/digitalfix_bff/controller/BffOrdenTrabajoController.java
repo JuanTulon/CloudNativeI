@@ -33,6 +33,11 @@ public class BffOrdenTrabajoController {
         return ordenTrabajoClient.obtenerOrdenPorId(id);
     }
 
+    @GetMapping
+    public java.util.List<OrdenTrabajoDTO> obtenerTodas() {
+        return ordenTrabajoClient.obtenerTodas();
+    }
+
     @PutMapping("/{id}/status")
     public OrdenTrabajoDTO actualizarEstado(@PathVariable("id") Long id, @RequestBody ActualizarEstadoDTO dto) {
         return ordenTrabajoClient.actualizarEstado(id, dto);

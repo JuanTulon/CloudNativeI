@@ -22,6 +22,9 @@ public interface OrdenTrabajoClient {
     @GetMapping("/{id}")
     OrdenTrabajoDTO obtenerOrdenPorId(@PathVariable("id") Long id);
 
+    @GetMapping
+    java.util.List<OrdenTrabajoDTO> obtenerTodas();
+
     @PutMapping("/{id}/status")
     OrdenTrabajoDTO actualizarEstado(@PathVariable("id") Long id, @RequestBody ActualizarEstadoDTO dto);
 }

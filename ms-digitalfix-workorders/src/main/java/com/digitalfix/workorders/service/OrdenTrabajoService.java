@@ -11,5 +11,7 @@ public interface OrdenTrabajoService {
 
     OrdenTrabajoDTO obtenerOrdenPorId(Integer id);
 
+    java.util.List<OrdenTrabajoDTO> obtenerTodas();
+
     OrdenTrabajoDTO actualizarEstado(Integer id, ActualizarEstadoDTO dto);
 }

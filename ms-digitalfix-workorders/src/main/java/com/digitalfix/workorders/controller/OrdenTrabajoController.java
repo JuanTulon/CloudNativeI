@@ -80,6 +80,12 @@ public class OrdenTrabajoController {
         return ResponseEntity.ok(orden);
     }
 
+    @Operation(summary = "Obtener todas las órdenes", description = "Retorna una lista de todas las órdenes de trabajo.")
+    @GetMapping
+    public ResponseEntity<java.util.List<OrdenTrabajoDTO>> obtenerTodas() {
+        return ResponseEntity.ok(ordenTrabajoService.obtenerTodas());
+    }
+
     @Operation(summary = "Actualizar estado de la orden", description = "Cambia el estado de una orden. Regla: no se puede pasar a EN_EJECUCION sin antes estar ASIGNADA.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Estado actualizado exitosamente",

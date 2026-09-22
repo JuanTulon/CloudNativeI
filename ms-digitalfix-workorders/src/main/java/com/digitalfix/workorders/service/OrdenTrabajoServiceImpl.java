@@ -40,6 +40,13 @@ public class OrdenTrabajoServiceImpl implements OrdenTrabajoService {
     }
 
     @Override
+    public java.util.List<OrdenTrabajoDTO> obtenerTodas() {
+        return ordenTrabajoRepository.findAll().stream()
+                .map(this::mapToDTO)
+                .collect(java.util.stream.Collectors.toList());
+    }
+
+    @Override
     public OrdenTrabajoDTO actualizarEstado(Integer id, ActualizarEstadoDTO dto) {
         OrdenTrabajo orden = ordenTrabajoRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Orden de trabajo no encontrada"));
