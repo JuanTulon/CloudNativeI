@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import org.springframework.security.access.prepost.PreAuthorize;
+
 @RestController
 @RequestMapping({"/api/bff/catalog", "/api/catalog"})
 @RequiredArgsConstructor
@@ -23,26 +25,31 @@ public class BffCatalogoController {
     private final CatalogoClient catalogoClient;
 
     @GetMapping("/services")
+    @PreAuthorize("hasAnyRole('Admin', 'Supervisor', 'Cliente')")
     public List<ServicioDTO> listarServicios() {
         return catalogoClient.listarServicios();
     }
 
     @PostMapping("/services")
+    @PreAuthorize("hasRole('Admin')")
     public ServicioDTO crearServicio(@RequestBody ServicioDTO dto) {
         return catalogoClient.crearServicio(dto);
     }
 
     @GetMapping({"/spares", "/parts"})
+    @PreAuthorize("hasAnyRole('Admin', 'Supervisor', 'Cliente')")
     public List<RepuestoDTO> listarRepuestos() {
         return catalogoClient.listarRepuestos();
     }
 
     @PostMapping({"/spares", "/parts"})
+    @PreAuthorize("hasRole('Admin')")
     public RepuestoDTO crearRepuesto(@RequestBody RepuestoDTO dto) {
         return catalogoClient.crearRepuesto(dto);
     }
 
     @PutMapping({"/spares/{id}/stock", "/parts/{id}/stock"})
+    @PreAuthorize("hasRole('Admin')")
     public RepuestoDTO actualizarStock(@PathVariable("id") Long id, @RequestBody ActualizarStockDTO dto) {
         RepuestoDTO existing = catalogoClient.obtenerRepuesto(id);
         if (existing == null) throw new RuntimeException("Repuesto no encontrado");
