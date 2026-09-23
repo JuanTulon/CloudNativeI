@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 // Interface que define los métodos que se van a comunicar con el microservicio de ordenes de trabajo
 //url del servicio de ordenes de trabajo: http://localhost:8081/api/workorders
-@FeignClient(name = "ordenes-trabajo", url = "http://localhost:8081/api/workorders", configuration = FeignClientConfig.class)
+@FeignClient(name = "ordenes-trabajo", url = "${WORKORDERS_URL:http://localhost:8081/api/workorders}", configuration = FeignClientConfig.class)
 public interface OrdenTrabajoClient {
 
     @PostMapping
