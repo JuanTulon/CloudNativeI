@@ -19,7 +19,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 @RestController
 // Path base para el BFF de ordenes de trabajo
-@RequestMapping({"/api/bff/workorders", "/api/workorders"})
+@RequestMapping({ "/api/bff/workorders", "/api/workorders" })
 @RequiredArgsConstructor
 public class BffOrdenTrabajoController {
 
@@ -38,7 +38,7 @@ public class BffOrdenTrabajoController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAnyRole('Supervisor', 'Admin', 'Auditor')")
+    @PreAuthorize("hasAnyRole('Supervisor', 'Admin', 'Auditor', 'Cliente')")
     public java.util.List<OrdenTrabajoDTO> obtenerTodas() {
         return ordenTrabajoClient.obtenerTodas();
     }

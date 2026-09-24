@@ -25,7 +25,7 @@ public class BffCatalogoController {
     private final CatalogoClient catalogoClient;
 
     @GetMapping("/services")
-    @PreAuthorize("hasAnyRole('Admin', 'Supervisor', 'Cliente')")
+    @PreAuthorize("hasAnyRole('Admin', 'Supervisor')")
     public List<ServicioDTO> listarServicios() {
         return catalogoClient.listarServicios();
     }
@@ -37,7 +37,7 @@ public class BffCatalogoController {
     }
 
     @GetMapping({"/spares", "/parts"})
-    @PreAuthorize("hasAnyRole('Admin', 'Supervisor', 'Cliente')")
+    @PreAuthorize("hasAnyRole('Admin', 'Supervisor')")
     public List<RepuestoDTO> listarRepuestos() {
         return catalogoClient.listarRepuestos();
     }
