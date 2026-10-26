@@ -1,0 +1,7 @@
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-notify\src\main\java\com\digitalfix\notify\config\RabbitMQConfig.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-notify\src\main\java\com\digitalfix\notify\consumer\DispatchConsumer.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-notify\src\main\java\com\digitalfix\notify\consumer\EmailNotifyConsumer.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-notify\src\main\java\com\digitalfix\notify\consumer\ReportConsumer.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-notify\src\main\java\com\digitalfix\notify\controller\NotifyHealthController.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-notify\src\main\java\com\digitalfix\notify\dto\OrdenEventoMensaje.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-notify\src\main\java\com\digitalfix\notify\MsDigitalfixNotifyApplication.java

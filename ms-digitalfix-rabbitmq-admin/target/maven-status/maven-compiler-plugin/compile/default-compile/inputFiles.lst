@@ -1,0 +1,7 @@
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-rabbitmq-admin\src\main\java\com\digitalfix\rabbitmq_admin\config\RabbitAdminConfig.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-rabbitmq-admin\src\main\java\com\digitalfix\rabbitmq_admin\controller\RabbitAdminController.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-rabbitmq-admin\src\main\java\com\digitalfix\rabbitmq_admin\dto\BindingRequestDTO.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-rabbitmq-admin\src\main\java\com\digitalfix\rabbitmq_admin\dto\ExchangeRequestDTO.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-rabbitmq-admin\src\main\java\com\digitalfix\rabbitmq_admin\dto\QueueRequestDTO.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-rabbitmq-admin\src\main\java\com\digitalfix\rabbitmq_admin\MsDigitalfixRabbitmqAdminApplication.java
+D:\Coding\CloudNative\CloudNativeI\ms-digitalfix-rabbitmq-admin\src\main\java\com\digitalfix\rabbitmq_admin\service\RabbitAdminService.java

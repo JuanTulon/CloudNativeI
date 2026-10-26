@@ -1,0 +1,7 @@
+com\digitalfix\notify\consumer\ReportConsumer.class
+com\digitalfix\notify\config\RabbitMQConfig.class
+com\digitalfix\notify\consumer\EmailNotifyConsumer.class
+com\digitalfix\notify\consumer\DispatchConsumer.class
+com\digitalfix\notify\controller\NotifyHealthController.class
+com\digitalfix\notify\dto\OrdenEventoMensaje.class
+com\digitalfix\notify\MsDigitalfixNotifyApplication.class

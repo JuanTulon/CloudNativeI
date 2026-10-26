@@ -1,0 +1,7 @@
+com\digitalfix\rabbitmq_admin\dto\ExchangeRequestDTO.class
+com\digitalfix\rabbitmq_admin\config\RabbitAdminConfig.class
+com\digitalfix\rabbitmq_admin\dto\BindingRequestDTO.class
+com\digitalfix\rabbitmq_admin\dto\QueueRequestDTO.class
+com\digitalfix\rabbitmq_admin\MsDigitalfixRabbitmqAdminApplication.class
+com\digitalfix\rabbitmq_admin\service\RabbitAdminService.class
+com\digitalfix\rabbitmq_admin\controller\RabbitAdminController.class
